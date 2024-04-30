@@ -12,8 +12,8 @@ const getAllGames = async (req, res, next) => {
     }
     req.games = games;
     next();
-};
+}
 
 module.exports = {
     getAllGames,
-};
+}
