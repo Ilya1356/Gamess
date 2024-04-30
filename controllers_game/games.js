@@ -1,6 +1,7 @@
+const gamesRouter = require("express").Router();
 const { writeData } = require("../utils/data");
 
-const sendAllGames = async (req, res) => {
+const sendAllGames = (req, res) => {
     res.send(req.games);
 };
 
@@ -61,11 +62,11 @@ const addGameController = async (req, res) => {
     });
 }
 
-const sendUpdatedGames = (req, res) => {
-    res.send({
-        games: req.games,
-        updated: req.updatedObject
-    });
-};
+gamesRouter.get("/games", sendAllGames);
+gamesRouter.delete("/games/:id", deleteGame);
 
-module.exports = { sendAllGames, deleteGame, addGameController, sendUpdatedGames }
+module.exports = {
+    sendAllGames,
+    deleteGame,
+    addGameController,
+};

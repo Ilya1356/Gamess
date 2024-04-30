@@ -1,4 +1,3 @@
-const http = require('http');
 const path = require('path');
 const express = require('express');
 
@@ -7,7 +6,7 @@ const gamesRouter = require('./routes/games');
 const bodyParser = require('body-parser');
 const cors = require('./middlewares/cors');
 
-const PORT = 3005;
+const PORT = 3000;
 const app = express();
 
 app.use(
@@ -20,4 +19,4 @@ app.use(
 
 app.listen(PORT, () => {
     console.log(`Server is running at PORT http://localhost:${PORT}`);
-});
+})
